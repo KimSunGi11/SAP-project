@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","names":["sap","ui","define","ComponentContainer","name","settings","id","async","placeAt"],"sources":["index-dbg.js"],"mappings":"AAAAA,IAAIC,GAAGC,OAAO,CACb,kCACE,SAAUC,GACZ,aAEA,IAAIA,EAAmB,CACtBC,KAAM,0BACNC,SAAW,CACVC,GAAK,eAENC,MAAO,OACLC,QAAQ,UACZ","ignoreList":[]}

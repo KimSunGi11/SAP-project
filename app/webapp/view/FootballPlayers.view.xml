@@ -1,0 +1,76 @@
+<mvc:View
+    controllerName="sap.ui.demo.walkthrough.controller.FootballPlayers"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <Table
+        id="footballPlayersTable"
+        class="sapUiResponsiveMargin"
+        width="auto"
+        items="{
+            path : 'footballPlayers>/FootballPlayers'
+        }"
+        sticky="HeaderToolbar,ColumnHeaders"
+        mode="None"> 
+        <headerToolbar>
+            <OverflowToolbar>
+                <Title text="Football Players" level="H2"/>
+                <ToolbarSpacer/>
+                <Button
+                    text="선수 생성"
+                    icon="sap-icon://add"
+                    press=".onCreatePlayer"/>
+                <Button
+                    text="정렬"
+                    icon="sap-icon://sort"
+                    press=".onOpenSortDialog"/>
+                <SearchField
+                    width="50%"
+                    search=".onFilterPlayers" />
+            </OverflowToolbar>
+        </headerToolbar>
+        <columns>
+            <Column>
+                <Text text="이름"/>
+            </Column>
+            <Column
+                hAlign="Center"
+                width="8em"
+                minScreenWidth="Tablet"
+                demandPopin="true">
+                <Text text="나이"/>
+            </Column>
+            <Column
+                minScreenWidth="Tablet"
+                demandPopin="true"
+                hAlign="Center">
+                <Text text="포지션"/>
+            </Column>
+            <Column
+                hAlign="End">
+                <Text text="팀"/>
+            </Column>
+            <Column
+                hAlign="End">
+                <Text text="국적"/>
+            </Column>
+            <Column>
+                <Text text=" "/>
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem vAlign="Middle" type="Navigation" press=".onPress">
+                <cells>
+                    <ObjectIdentifier title="{footballPlayers>PlayerName}" text="{footballPlayers>PlayerId}"/>
+                    <Text text="{footballPlayers>Age}" />
+                    <Text text="{footballPlayers>Position}" />
+                    <Text text="{footballPlayers>Team}" />
+                    <Text text="{footballPlayers>Country}" />
+                    <HBox justifyContent="End">
+                        <Button text="수정" press=".onEditPlayer"/>
+                        <Button text="삭제" press=".onDeletePlayer"/>
+                    </HBox>
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+</mvc:View>

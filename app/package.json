@@ -1,0 +1,14 @@
+{
+  "name": "WalkthroughTutorial",
+  "private": true,
+  "version": "1.0.0",
+  "author": "SAP SE",
+  "description": "UI5 Demo App - Walkthrough Tutorial",
+  "scripts": {
+    "serve": "ui5 serve --open /index.html",
+    "proxy": "node proxy.js"
+  },
+  "devDependencies": {
+    "cors-anywhere": "^0.4.1"
+  }
+}

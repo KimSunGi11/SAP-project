@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/ComponentContainer"],function(e){"use strict";new e({name:"sap.ui.demo.walkthrough",settings:{id:"walkthrough"},async:true}).placeAt("content")});
+//# sourceMappingURL=index.js.map

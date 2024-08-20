@@ -1,0 +1,118 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.uxap"
+    xmlns:layout="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:m="sap.m"
+    controllerName="sap.ui.demo.walkthrough.controller.FootballPlayersDetail"
+    height="100%">
+    
+    <ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false">
+        <headerTitle>
+            <ObjectPageDynamicHeaderTitle>
+                <!-- 선수 이름과 포지션 -->
+                <expandedHeading>
+                    <m:Title text="{footballPlayers>PlayerName}" wrapping="true" />
+                </expandedHeading>
+                <snappedHeading>
+                    <m:FlexBox fitContainer="true" alignItems="Center">
+                        <m:Image src="{footballPlayers>ImageUrl}" width="32px" height="32px" class="sapUiTinyMarginEnd"/>
+                        <m:Title text="{footballPlayers>PlayerName}" wrapping="true"/>
+                    </m:FlexBox>
+                </snappedHeading>
+                <snappedContent>
+                    <m:Text text="{footballPlayers>Position}" />
+                </snappedContent>
+                <expandedContent>
+                    <m:Text text="{footballPlayers>Position}" />
+                </expandedContent>
+                <actions>
+                    <m:Button type="Emphasized" text="수정" press=".onEditPlayer"/>
+                    <m:Button type="Reject" text="삭제" press=".onDeletePlayer"/>
+                </actions>
+            </ObjectPageDynamicHeaderTitle>
+        </headerTitle>
+
+        <headerContent>
+            <m:FlexBox wrap="Wrap" fitContainer="true">
+                <layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+                    <m:Label text="나이" />
+                    <m:ObjectAttribute text="{footballPlayers>Age}세" />
+                </layout:VerticalLayout>
+                <layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+                    <m:Label text="팀" />
+                    <m:ObjectAttribute text="{footballPlayers>Team}" />
+                </layout:VerticalLayout>
+                <layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+                    <m:Label text="국적" />
+                    <m:ObjectAttribute text="{footballPlayers>Country}" />
+                </layout:VerticalLayout>
+                <layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+                    <m:Label text="평점" />
+                    <m:RatingIndicator value="{footballPlayers>Rating}" change=".onRatingChange"/>
+                </layout:VerticalLayout>
+            </m:FlexBox>
+        </headerContent>
+
+        <!-- 선수 설명 섹션 -->
+        <sections>
+            <ObjectPageSection titleUppercase="false" title="선수 설명">
+                <ObjectPageSubSection titleUppercase="false">
+                    <layout:VerticalLayout>
+                        <m:Image src="https://i.namu.wiki/i/-gdihhlIqsLQebeBBtdvGfiCz3uU74xliT_JiEmLh2HeXycXNWheIO1wsQaAKmLcnaZIlW5yI66An_8O9vwAlRvUW3CZ9mvGyb4Ck-whacjN0D24S275whW4n-OFlzxw0Kcf0Wf04ftsBfsYs_DLLw.webp" width="500px" height="600px" class="sapUiSmallMarginBottom"/>
+                        <m:Text text="손흥민(孫興慜, 1992년 7월 8일~)은 대한민국의 축구 선수로, 포지션은 공격수이다. 현재 잉글랜드 프리미어리그의 토트넘 홋스퍼와 대한민국 축구 국가대표팀에서 활동하고 있으며 두 팀의 주장을 맡고 있다. 그는 구단에서의 활약을 바탕으로 역대 최고의 아시아 축구 선수 중 한 명으로 간주되고 있다.
+
+16세에 독일로 건너가 함부르크 SV에 입단했으며 2010년 분데스리가에 데뷔했다. 2013년에 클럽 최고 이적료인 1000만 유로에 바이어 레버쿠젠으로 이적했으며 2년 후 2015년에 아시아 축구 선수 역대 최고 이적료인 3천만 유로의 이적료로 프리미어리그의 토트넘 홋스퍼에 입단했다. 토트넘에서 뛰는 동안 프리미어리그와 챔피언스리그 아시아 최다 득점자가 되었으며 차범근이 기록했던 유럽 프로 축구 대회 한국 선수 최다 득점 기록을 갱신했다. 2019년에는 박지성의 뒤를 이어 UEFA 챔피언스리그 결승에 선발로 출전한 두 번째 아시아 축구 선수가 되었다. 2021-22시즌에는 모하메드 살라와 함께 리그 득점 23골을 기록하며 아시아 선수로는 최초로 프리미어리그 골든 부츠를 수상했다. 2023년 4월에는 프리미어리그에서 통산 100골을 넣은 최초의 아시아 선수가 되었다. 또한 손흥민은 토트넘 홋스퍼 역사상 6번째로 많은 득점을 기록했으며 최다 어시스트 기록을 세웠다.
+
+2010년부터 대한민국 국가대표팀 선수로 활약한 손흥민은 2014년, 2018년, 2022년 FIFA 월드컵에 대한민국 국가대표로 참가했으며, 박지성, 안정환과 함께 3골로 동률을 기록한 대한민국팀 월드컵 공동 최다 득점자이다. 또한 AFC 아시안컵에 4회(2011, 2015, 2019, 2023) 참가하여 2015년 대회에서 준우승을 차지했다. 올림픽 대표팀 선수로 2016년 하계 올림픽에 참가했으며 2018년 아시안 게임에서 금메달을 획득했다.
+
+손흥민은 축구 선수로서 달성한 업적을 바탕으로 대한민국 축구계의 대표적 인물로 여겨지고 있다. 2019년부터 포브스 코리아 파워 셀러브리티 40인에 계속 선정되었으며 2023년에는 2위에 올랐다. 2022년 6월에는 축구 선수로는 최초로 대한민국 체육인으로 받을 수 있는 최고 권위 훈장인 청룡장을 받았다." />
+                    </layout:VerticalLayout>
+                </ObjectPageSubSection>
+            </ObjectPageSection>
+
+            <!-- 댓글 섹션 -->
+            <ObjectPageSection titleUppercase="false" title="댓글">
+                <ObjectPageSubSection titleUppercase="false">
+                    <layout:VerticalLayout width="100%">
+                        <m:TextArea id="commentArea" placeholder="댓글을 입력하세요..." growing="true" rows="4" width="100%"/>
+                        <m:Button text="댓글 달기" press=".onSubmitComment" />
+                        
+                        <m:List width="100%">
+                            <m:CustomListItem>
+                                <layout:VerticalLayout width="100%">
+                                    <m:Text text="홍길동" class="sapUiTinyMarginBottom" />
+                                    <m:Text text="훌륭한 선수입니다!" />
+                                </layout:VerticalLayout>
+                            </m:CustomListItem>
+                            <m:CustomListItem>
+                                <layout:VerticalLayout width="100%">
+                                    <m:Text text="김철수" class="sapUiTinyMarginBottom" />
+                                    <m:Text text="다음 경기에서도 기대됩니다." />
+                                </layout:VerticalLayout>
+                            </m:CustomListItem>
+                            <m:CustomListItem>
+                                <layout:VerticalLayout width="100%">
+                                    <m:Text text="박지성" class="sapUiTinyMarginBottom" />
+                                    <m:Text text="손흥민 선수의 열정적인 플레이가 정말 인상적입니다!" />
+                                </layout:VerticalLayout>
+                            </m:CustomListItem>
+                            <m:CustomListItem>
+                                <layout:VerticalLayout width="100%">
+                                    <m:Text text="이승우" class="sapUiTinyMarginBottom" />
+                                    <m:Text text="항상 응원합니다! 멋진 경기 기대해요." />
+                                </layout:VerticalLayout>
+                            </m:CustomListItem>
+                            <m:CustomListItem>
+                                <layout:VerticalLayout width="100%">
+                                    <m:Text text="김연아" class="sapUiTinyMarginBottom" />
+                                    <m:Text text="손흥민 선수, 축구와 함께하는 모습이 멋져요!" />
+                                </layout:VerticalLayout>
+                            </m:CustomListItem>
+                        </m:List>
+                    </layout:VerticalLayout>
+                </ObjectPageSubSection>
+            </ObjectPageSection>
+        </sections>
+    </ObjectPageLayout>
+</mvc:View>

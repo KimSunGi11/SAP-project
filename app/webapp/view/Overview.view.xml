@@ -1,0 +1,49 @@
+<mvc:View
+    controllerName="sap.ui.demo.walkthrough.controller.App"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.f">
+
+    <f:DynamicPage
+        title="대한민국 축구선수"
+        headerExpanded="true" 
+        showFooter="false">
+
+        <f:header>
+            <f:DynamicPageHeader>
+                <HBox justifyContent="SpaceBetween">
+                    
+                    <!-- 왼쪽 부분 -->
+                    <VBox>
+                        <Title text="축구선수 목록" level="H1" />
+                        <HBox class="sapUiSmallMarginTop">
+                            <Image src="sap-icon://soccer" width="24px" height="24px"/>
+                            <Text text="현재 등록된 선수: 25명" class="sapUiSmallMarginBegin"/>
+                        </HBox>
+                        <HBox class="sapUiSmallMarginTop">
+                            <Image src="sap-icon://goal" width="24px" height="24px"/>
+                            <Text text="최다 득점자: 손흥민 (12골)" class="sapUiSmallMarginBegin"/>
+                        </HBox>
+                    </VBox>
+                    
+                    <!-- 오른쪽 부분 -->
+                    <VBox class="sapUiSmallMarginEnd" alignItems="End">
+                        <Image src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" width="50px" height="50px" />
+                        <Text text="홍길동" class="user-info-text sapUiTinyMarginTop"/>
+                        <Text text="honggildong@example.com" class="user-info-text"/>
+                        <Text text="마지막 로그인: 2024-08-15" class="sapUiTinyMarginTop" />
+                        <HBox class="sapUiSmallMarginTop">
+                            <Image src="sap-icon://activity-individual" width="16px" height="16px"/>
+                            <Text text="활동 상태: 온라인" class="sapUiSmallMarginBegin"/>
+                        </HBox>
+                    </VBox>
+                </HBox>
+            </f:DynamicPageHeader>
+        </f:header>
+        
+        <f:content>
+            <mvc:XMLView viewName="sap.ui.demo.walkthrough.view.FootballPlayers"/>
+        </f:content>
+
+    </f:DynamicPage>
+</mvc:View>

@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/base/ManagedObject","sap/ui/core/Fragment"],function(e,o){"use strict";return e.extend("sap.ui.demo.walkthrough.controller.HelloDialog",{constructor:function(e){this._oView=e},exit:function(){delete this._oView},open:function(){var e=this._oView;if(!e.byId("helloDialog")){var i={onCloseDialog:function(){e.byId("helloDialog").close()}};o.load({id:e.getId(),name:"sap.ui.demo.walkthrough.view.HelloDialog",controller:i}).then(function(o){e.addDependent(o);o.open()})}else{e.byId("helloDialog").open()}}})});
+//# sourceMappingURL=HelloDialog.js.map

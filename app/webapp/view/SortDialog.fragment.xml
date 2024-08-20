@@ -1,0 +1,34 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:tcm="sap.m.table.columnmenu">
+    <Dialog
+        id="sortDialog"
+        title="정렬 옵션"
+        afterClose=".onCloseSortDialog">
+        <content>
+            <VBox>
+                <!-- 정렬 기준 -->
+                <Label text="정렬 기준"/>
+                <VBox>
+                    <RadioButton text="이름" groupName="sortGroup" select=".onSortOptionSelected"/>
+                    <RadioButton text="나이" groupName="sortGroup" select=".onSortOptionSelected"/>
+                    <RadioButton text="포지션" groupName="sortGroup" select=".onSortOptionSelected"/>
+                    <RadioButton text="팀" groupName="sortGroup" select=".onSortOptionSelected"/>
+                    <RadioButton text="국적" groupName="sortGroup" select=".onSortOptionSelected"/>
+                </VBox>
+                
+                <!-- 정렬 순서 -->
+                <Label text="정렬 순서"/>
+                <VBox>
+                    <RadioButton text="오름차순" groupName="orderGroup" select=".onSortOrderSelected"/>
+                    <RadioButton text="내림차순" groupName="orderGroup" select=".onSortOrderSelected"/>
+                </VBox>
+            </VBox>
+        </content>
+        <buttons>
+            <Button text="확인" press=".onApplySort"/>
+            <Button text="취소" press=".onCloseSortDialog"/>
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

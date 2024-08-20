@@ -1,0 +1,17 @@
+<mvc:View
+    controllerName="sap.ui.demo.walkthrough.controller.CreatePlayer"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <Page title="선수 생성" showNavButton="true" navButtonPress=".onNavBack">
+        <content>
+            <VBox class="sapUiSmallMargin">
+                <Input placeholder="이름" value="{newPlayer>/PlayerName}"/>
+                <Input placeholder="나이" value="{newPlayer>/Age}" type="Number"/>
+                <Input placeholder="포지션" value="{newPlayer>/Position}"/>
+                <Input placeholder="팀" value="{newPlayer>/Team}"/>
+                <Input placeholder="국적" value="{newPlayer>/Country}"/>
+                <Button text="저장" press=".onSaveNewPlayer" class="sapUiSmallMarginTop"/>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
